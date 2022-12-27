@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './Create.css';
+import { useNavigate } from 'react-router-dom';
+import useFetchPost from '../../hooks/useFetchPost';
 
 export default function Create() {
   const [title, setTitle] = useState('');
@@ -8,9 +10,27 @@ export default function Create() {
   const [newIngredient, setNewIngredient] = useState('');
   const [ingredients, setIngredients] = useState([]);
   const ingredientInput = useRef(null);
+  const navigate = useNavigate();
 
+  const { postData, data, error } = useFetchPost(
+    'http://localhost:3000/recipes',
+    'POST'
+  );
+
+  function redirect() {
+    if (data) {
+      setTimeout(() => navigate('/', 2000));
+    }
+  }
   function handleSubmit(e) {
     e.preventDefault();
+    postData({
+      title,
+      ingredients,
+      method,
+      cookingTime: cookingTime + 'minutes',
+    });
+    redirect();
     console.log(title, method, cookingTime, ingredients);
   }
   function handleAdd(e) {
