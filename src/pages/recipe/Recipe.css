@@ -21,3 +21,17 @@
   text-align: left;
   line-height: 1.5em;
 }
+
+.recipe.dark {
+  background: #555;
+  color: #e4e4e4;
+}
+
+.recipe.dark h2 {
+  color: #e4e4e4;
+}
+
+.recipe.dark .mins,
+.recipe.dark li {
+  color: rgb(159, 159, 159);
+}

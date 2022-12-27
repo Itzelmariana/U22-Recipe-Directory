@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './Create.css';
 import { useNavigate } from 'react-router-dom';
 import useFetchPost from '../../hooks/useFetchPost';
+import { useTheme } from '../../hooks/useTheme';
 
 export default function Create() {
   const [title, setTitle] = useState('');
@@ -11,6 +12,7 @@ export default function Create() {
   const [ingredients, setIngredients] = useState([]);
   const ingredientInput = useRef(null);
   const navigate = useNavigate();
+  const { mode } = useTheme();
 
   const { postData, data, error } = useFetchPost(
     'http://localhost:3000/recipes',
@@ -44,7 +46,8 @@ export default function Create() {
   }
 
   return (
-    <div className='create'>
+    <div className={`create ${mode}`}>
+      {error && <div>{error}</div>}
       <h2 className='page-title'>Add New Recipe</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -93,7 +96,7 @@ export default function Create() {
             required
           />
         </label>
-        <button className='btn'>Submit</button>
+        <button className='btn'>Submit </button>
       </form>
     </div>
   );
