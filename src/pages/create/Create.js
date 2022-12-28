@@ -43,7 +43,6 @@ export default function Create() {
         setTitle(data.title);
         setMethod(data.method);
         setCookingTime(data.cookingTime);
-        console.log(data.cookingTime);
         setIngredients(data.ingredients);
       });
     } else {
@@ -69,9 +68,7 @@ export default function Create() {
           await projectFirestore.collection('recipes').add(doc);
           setIsSubmitted(false);
           setTimeout(() => navigate('/', 2000));
-        } catch (err) {
-          console.log(err);
-        }
+        } catch (err) {}
       } else {
         try {
           await projectFirestore.collection('recipes').doc(id).update(doc);
