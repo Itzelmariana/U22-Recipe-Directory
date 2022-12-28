@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <nav className='navbar' style={{ background: color }}>
       <h1>
-        <Link to='/recipes/:id'>Recipe Directory </Link>
+        <Link to='/'>Recipe Directory </Link>
       </h1>
       <SearchBar />
       <NavLink to='/create' className='box'>
