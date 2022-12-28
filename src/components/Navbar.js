@@ -15,7 +15,7 @@ export default function Navbar() {
         <Link to='/'>Recipe Directory </Link>
       </h1>
       <SearchBar />
-      <NavLink to='/create' className='box'>
+      <NavLink to='/create?action=create' className='box'>
         Create Recipe
       </NavLink>
     </nav>

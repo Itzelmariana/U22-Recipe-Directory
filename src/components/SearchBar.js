@@ -18,6 +18,7 @@ export default function SearchBar() {
           type='text'
           id='search'
           onChange={(e) => setTerm(e.target.value)}
+          value={term}
           required
         />
       </form>

@@ -35,3 +35,8 @@
 .recipe.dark li {
   color: rgb(159, 159, 159);
 }
+.editIcon {
+  height: 20px;
+  display: block;
+  margin-left: auto;
+}

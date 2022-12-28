@@ -9,7 +9,7 @@ const themeReducer = (state, action) => {
     case 'CHANGE_MODE':
       return { ...state, mode: action.payload };
     default:
-      return state;
+      return { ...state };
   }
 };
 
