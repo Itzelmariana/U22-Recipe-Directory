@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import { useTheme } from '../hooks/useTheme';
 
@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <nav className='navbar' style={{ background: color }}>
       <h1>
-        <NavLink to='/recipes/:id'>Recipe Directory </NavLink>
+        <Link to='/recipes/:id'>Recipe Directory </Link>
       </h1>
       <SearchBar />
       <NavLink to='/create' className='box'>

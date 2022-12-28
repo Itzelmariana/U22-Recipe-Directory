@@ -35,6 +35,7 @@
   margin: 0 0 0 10px;
 }
 
-.create.dark {
+.create.dark,
+.create.dark .page-title {
   color: #fff;
 }
