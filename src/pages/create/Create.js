@@ -30,9 +30,9 @@ export default function Create() {
   const params = useParams();
   const id = params.id;
 
-  useEffect(() => {
-    setNoIngredientError(ingredients.length === 0);
-  }, [ingredients]);
+  // useEffect(() => {
+  //   setNoIngredientError(ingredients.length === 0);
+  // }, [ingredients]);
 
   useEffect(() => {
     if (!action) {
@@ -159,7 +159,7 @@ export default function Create() {
             return (
               <>
                 <em
-                  key={ing}
+                  key={i}
                   style={{
                     borderBottom: '1px solid' + color,
                     cursor: 'pointer',
@@ -168,7 +168,7 @@ export default function Create() {
                 >
                   {ing}{' '}
                 </em>
-                <span> , </span>
+                <span>, </span>
               </>
             );
           })}
