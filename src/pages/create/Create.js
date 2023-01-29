@@ -157,9 +157,8 @@ export default function Create() {
           Current Ingredients:{' '}
           {ingredients.map((ing, i) => {
             return (
-              <>
+              <span key={'ingredient-' + i}>
                 <em
-                  key={i}
                   style={{
                     borderBottom: '1px solid' + color,
                     cursor: 'pointer',
@@ -169,7 +168,7 @@ export default function Create() {
                   {ing}{' '}
                 </em>
                 <span>, </span>
-              </>
+              </span>
             );
           })}
         </p>
